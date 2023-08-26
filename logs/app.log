@@ -55,3 +55,46 @@ Traceback (most recent call last):
     division_by_zero = 1 / 0
 ZeroDivisionError: division by zero
 2023-08-26 11:34:57,994 - test_api - INFO - 127.0.0.1 - - [26/Aug/2023 11:34:57] "[35m[1mGET /debug-sentry HTTP/1.1[0m" 500 -
+2023-08-26 15:08:45,640 - test_api - INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2023-08-26 15:08:56,141 - test_api - ERROR - Exception on /debug-sentry [GET]
+Traceback (most recent call last):
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Documents\Projects\api_test\api_service\main.py", line 97, in trigger_error
+    division_by_zero = 1 / 0
+ZeroDivisionError: division by zero
+2023-08-26 15:08:56,152 - test_api - INFO - 127.0.0.1 - - [26/Aug/2023 15:08:56] "[35m[1mGET /debug-sentry HTTP/1.1[0m" 500 -
+2023-08-26 15:10:46,424 - test_api - ERROR - Exception on /debug-sentry [GET]
+Traceback (most recent call last):
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Documents\Projects\api_test\api_service\main.py", line 97, in trigger_error
+    division_by_zero = 1 / 0
+ZeroDivisionError: division by zero
+2023-08-26 15:10:46,434 - test_api - INFO - 127.0.0.1 - - [26/Aug/2023 15:10:46] "[35m[1mGET /debug-sentry HTTP/1.1[0m" 500 -
+2023-08-26 15:11:59,688 - test_api - ERROR - Exception on /debug-sentry [GET]
+Traceback (most recent call last):
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Rahat\miniconda3\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Documents\Projects\api_test\api_service\main.py", line 97, in trigger_error
+    division_by_zero = 1 / 0
+ZeroDivisionError: division by zero
+2023-08-26 15:11:59,696 - test_api - INFO - 127.0.0.1 - - [26/Aug/2023 15:11:59] "[35m[1mGET /debug-sentry HTTP/1.1[0m" 500 -
