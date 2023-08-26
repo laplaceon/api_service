@@ -3,6 +3,9 @@ import logging
 import os
 import time
 
+import sentry_sdk
+from sentry_sdk.integrations.flask import FlaskIntegration
+
 # Check and create if logs directory doesn't exist
 if not os.path.exists('logs'):
     os.makedirs('logs')
@@ -11,6 +14,20 @@ if not os.path.exists('logs'):
 logging.basicConfig(filename='logs/app.log', 
                     format='%(asctime)s - test_api - %(levelname)s - %(message)s', 
                     level=logging.INFO)
+
+sentry_sdk.init(
+    dsn="https://7c69ad74f5b7e5e464e1ecfecffa5ad1@o4505771872616448.ingest.sentry.io/4505771887230976",
+    integrations=[
+        FlaskIntegration(),
+    ],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
+
+
 
 app = Flask(__name__)
 
@@ -74,6 +91,10 @@ def index():
     else:
         logging.error("ERROR: Unhandled IndexError: list index out of range")
         return {"status": "Unhandled exception"}, 500
+
+@app.route('/debug-sentry')
+def trigger_error():
+    division_by_zero = 1 / 0
 
 if __name__ == "__main__":
     app.run(debug=True)
